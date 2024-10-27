@@ -54,3 +54,19 @@ Creating a Global AMI involves installing necessary agents and software on an EC
    sudo installer -pkg AWSCLIV2.pkg -target /
    aws --version
    ```
+2. **Install CloudWatch Agent**:
+   - Install CloudWatch Agent to monitor your EC2 instances.
+
+   ```bash
+   sudo yum install amazon-cloudwatch-agent
+   sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a start
+   ```
+
+3. **Install AWS Systems Manager (SSM) Agent**:
+   - The SSM Agent is necessary for managing EC2 instances via AWS Systems Manager.
+
+   ```bash
+   sudo yum install amazon-ssm-agent
+   sudo systemctl start amazon-ssm-agent
+   sudo systemctl enable amazon-ssm-agent
+   ```
