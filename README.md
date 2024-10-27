@@ -38,3 +38,19 @@ Before starting the deployment, ensure you have the following:
 4. **JFrog Cloud Account**:
    - Sign up for a [JFrog Cloud account](https://jfrog.com/start-free/).
    - Set up a Maven repository in JFrog to store your build artifacts.
+
+
+## Pre-Deployment
+
+### Create Global AMI (Amazon Machine Image)
+
+Creating a Global AMI involves installing necessary agents and software on an EC2 instance, which will be used to create custom AMIs for different components.
+
+1. **Install AWS CLI**:
+   - Install AWS CLI by following the instructions [here](https://aws.amazon.com/cli/).
+
+   ```bash
+   curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+   sudo installer -pkg AWSCLIV2.pkg -target /
+   aws --version
+   ```
